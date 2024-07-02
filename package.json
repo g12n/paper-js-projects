@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server . --host 0.0.0.0"
+    "build": "esbuild --bundle src/index.js --outfile=www/main.js",
+    "start": "npm run build -- --servedir=www",
+    "watch": "npm run build -- --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "live-server": "^1.2.1",
-    "paper": "^0.12.11"
+    "esbuild": "^0.22.0",
+    "paper": "^0.12.17"
   }
 }
